@@ -1,0 +1,20 @@
+{
+    "generics": [
+        {
+            "name": "Australia",
+            "code": "AUS"
+        },
+        {
+            "name": "India",
+            "code": "IND"
+        },
+        {
+            "name": "English",
+            "code": "ENG"
+        },
+        {
+            "name": "Hindi",
+            "code": "HIN"
+        }
+    ]
+}
