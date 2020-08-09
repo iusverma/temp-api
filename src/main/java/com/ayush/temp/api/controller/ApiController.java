@@ -7,8 +7,8 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.ResponseEntity;
 import org.springframework.util.CollectionUtils;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,6 +25,12 @@ public class ApiController {
 
 	@Value("${generics}")
 	String [] generics;
+
+	@Value("${my.name}")
+	String myName;
+
+	@Value("${my.code}")
+	String myCode;
 
 	@Resource
 	private YamlParser yamlParser;
@@ -66,5 +72,19 @@ public class ApiController {
 			re.setGenerics(generics);
 		}
 		return re;
+	}
+
+//	@GetMapping(value="/myname")
+//	public String getMapping() {
+//		return myName;
+//	}
+
+	@GetMapping(value="/myname")
+	public Generic getMapping() {
+		System.out.println("/myname");
+		Generic gen = new Generic();
+		gen.setName(myName);
+		gen.setCode(myCode);
+		return gen;
 	}
 }

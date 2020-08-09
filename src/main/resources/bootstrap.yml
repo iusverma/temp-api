@@ -1,0 +1,5 @@
+managment.endpoints.web.exposure.include: "*"
+
+spring.cloud.config.uri: http://localhost:8080/
+spring.application.name: temp-api
+spring.profiles.active: default
